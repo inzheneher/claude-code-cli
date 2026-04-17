@@ -1,6 +1,9 @@
 // @vitest-environment node
 import { test, expect, vi, beforeEach } from "vitest";
+import { jwtVerify } from "jose";
 import { NextRequest } from "next/server";
+
+const JWT_SECRET = new TextEncoder().encode("development-secret-key");
 
 vi.mock("server-only", () => ({}));
 
@@ -34,6 +37,60 @@ test("createSession sets an httpOnly cookie with a JWT", async () => {
   expect(options.httpOnly).toBe(true);
   expect(options.path).toBe("/");
   expect(options.expires).toBeInstanceOf(Date);
+});
+
+test("createSession cookie has sameSite lax and correct path", async () => {
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+
+  const [, , options] = mockCookieStore.set.mock.calls[0];
+  expect(options.sameSite).toBe("lax");
+  expect(options.path).toBe("/");
+});
+
+test("createSession cookie expires approximately 7 days from now", async () => {
+  const before = Date.now();
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+  const after = Date.now();
+
+  const [, , options] = mockCookieStore.set.mock.calls[0];
+  const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+  expect(options.expires.getTime()).toBeGreaterThanOrEqual(before + sevenDaysMs - 1000);
+  expect(options.expires.getTime()).toBeLessThanOrEqual(after + sevenDaysMs + 1000);
+});
+
+test("createSession JWT payload contains userId and email", async () => {
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+
+  const [, token] = mockCookieStore.set.mock.calls[0];
+  const { payload } = await jwtVerify(token, JWT_SECRET);
+  expect(payload.userId).toBe("user-123");
+  expect(payload.email).toBe("test@example.com");
+});
+
+test("createSession JWT is signed with HS256", async () => {
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+
+  const [, token] = mockCookieStore.set.mock.calls[0];
+  const header = JSON.parse(Buffer.from(token.split(".")[0], "base64url").toString());
+  expect(header.alg).toBe("HS256");
+});
+
+test("createSession secure flag is false outside production", async () => {
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+
+  const [, , options] = mockCookieStore.set.mock.calls[0];
+  expect(options.secure).toBe(false);
+});
+
+test("createSession only sets one cookie", async () => {
+  const { createSession } = await importAuth();
+  await createSession("user-123", "test@example.com");
+  expect(mockCookieStore.set).toHaveBeenCalledOnce();
 });
 
 test("getSession returns null when no cookie is present", async () => {
