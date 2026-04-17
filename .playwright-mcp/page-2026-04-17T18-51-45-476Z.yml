@@ -1,0 +1,131 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e57]: Create a simple dashboard card component with a title, a metric value, and a small trend indicator
+            - img [ref=e60]
+          - generic [ref=e63]:
+            - img [ref=e66]
+            - generic [ref=e71]:
+              - generic [ref=e74]: Creating App.jsx
+              - separator [ref=e75]
+              - generic [ref=e78]: Creating DashboardCard.jsx
+              - separator [ref=e79]
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: "Done! Created a dashboard card component with:"
+                - list [ref=e82]:
+                  - listitem [ref=e83]:
+                    - strong [ref=e84]: Title
+                    - text: "- metric label"
+                  - listitem [ref=e85]:
+                    - strong [ref=e86]: Value
+                    - text: "- main metric display"
+                  - listitem [ref=e87]:
+                    - strong [ref=e88]: Trend indicator
+                    - text: "- shows percentage change with up/down arrow (green for positive, red for negative)"
+                - paragraph [ref=e89]: The App.jsx includes 4 example cards in a responsive grid layout.
+        - generic [ref=e20]:
+          - textbox "Describe the React component you want to create..." [ref=e21]
+          - button [disabled] [ref=e22]:
+            - img [ref=e23]
+    - separator [ref=e26]
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - tablist [ref=e31]:
+          - tab "Preview" [ref=e32]
+          - tab "Code" [selected] [ref=e33]
+        - generic [ref=e34]:
+          - button "Sign In" [ref=e35]
+          - button "Sign Up" [ref=e36]
+      - generic [ref=e91]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99] [cursor=pointer]:
+              - img [ref=e100]
+              - img [ref=e102]
+              - generic [ref=e104]: components
+            - generic [ref=e107] [cursor=pointer]:
+              - img [ref=e108]
+              - generic [ref=e113]: DashboardCard.jsx
+          - generic [ref=e115] [cursor=pointer]:
+            - img [ref=e116]
+            - generic [ref=e121]: App.jsx
+        - separator [ref=e122]
+        - code [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - generic [ref=e440]: "1"
+              - generic [ref=e137]: "2"
+              - generic [ref=e442]:
+                - generic [ref=e443] [cursor=pointer]: 
+                - generic [ref=e444]: "3"
+              - generic [ref=e446]: "4"
+              - generic [ref=e448]: "5"
+              - generic [ref=e449]:
+                - generic [ref=e450] [cursor=pointer]: 
+                - generic [ref=e451]: "6"
+              - generic [ref=e452]:
+                - generic [ref=e453] [cursor=pointer]: 
+                - generic [ref=e454]: "7"
+              - generic [ref=e456]: "8"
+              - generic [ref=e458]: "9"
+              - generic [ref=e459]:
+                - generic [ref=e460] [cursor=pointer]: 
+                - generic [ref=e461]: "10"
+              - generic [ref=e162]: "11"
+              - generic [ref=e164]: "12"
+              - generic [ref=e462]:
+                - generic [ref=e463] [cursor=pointer]: 
+                - generic [ref=e464]: "13"
+              - generic [ref=e465]:
+                - generic [ref=e466] [cursor=pointer]: 
+                - generic [ref=e467]: "14"
+              - generic [ref=e171]: "15"
+              - generic [ref=e468]:
+                - generic [ref=e469] [cursor=pointer]: 
+                - generic [ref=e470]: "16"
+              - generic [ref=e175]: "17"
+              - generic [ref=e177]: "18"
+              - generic [ref=e472]: "19"
+              - generic [ref=e182]: "20"
+              - generic [ref=e184]: "21"
+              - generic [ref=e186]: "22"
+              - generic [ref=e188]: "23"
+              - generic [ref=e474]: "24"
+              - generic [ref=e477]: "25"
+            - generic [ref=e365]:
+              - generic [ref=e582]: "import { TrendingUp, TrendingDown } from"
+              - generic [ref=e584]: "'lucide-react';"
+              - generic [ref=e586]: "export default function DashboardCard({ title, value,"
+              - generic [ref=e588]: const isPositive = trend >= 0;
+              - generic [ref=e592]: return (
+              - generic [ref=e594]: <div className="bg-white rounded-lg shadow p-6">
+              - generic [ref=e596]: <h3 className="text-gray-600 text-sm
+              - generic [ref=e598]: "font-medium mb-2\">{title}</h3>"
+              - generic [ref=e602]: <div className="flex items-end justify-between">
+              - generic [ref=e604]: <div className="text-3xl font-bold
+              - generic [ref=e608]: "<div className={`flex items-center gap-1 $"
+              - generic [ref=e610]: "{isPositive ? ("
+              - generic [ref=e612]: "<TrendingUp size={20} />"
+              - generic [ref=e614]: ") : ("
+              - generic [ref=e616]: "<TrendingDown size={20} />"
+              - generic [ref=e618]: ")}"
+              - generic [ref=e620]: <span className="text-sm font-semibold">
+              - generic [ref=e622]: </div>
+              - generic [ref=e624]: </div>
+              - generic [ref=e626]: </div>
+              - generic [ref=e628]: );
+              - generic [ref=e630]: "}"
+              - generic [ref=e633]: "trend }) {"
+              - generic [ref=e635]: "text-gray-900\">{value}</div>"
+              - generic [ref=e637]: "{isPositive ? 'text-green-600' :"
+              - generic [ref=e639]: "'text-red-600'}`}>"
+              - generic [ref=e641]: "{Math.abs(trend)}%</span>"
+            - textbox "Editor content" [ref=e437]: "}"
+  - alert [ref=e47]
+  - generic [ref=e438]:
+    - alert
+    - alert

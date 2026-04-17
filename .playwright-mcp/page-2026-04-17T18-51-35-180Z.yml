@@ -1,0 +1,147 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - heading "React Component Generator" [level=1] [ref=e7]
+      - generic [ref=e9]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - generic [ref=e57]: Create a simple dashboard card component with a title, a metric value, and a small trend indicator
+            - img [ref=e60]
+          - generic [ref=e63]:
+            - img [ref=e66]
+            - generic [ref=e71]:
+              - generic [ref=e74]: Creating App.jsx
+              - separator [ref=e75]
+              - generic [ref=e78]: Creating DashboardCard.jsx
+              - separator [ref=e79]
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: "Done! Created a dashboard card component with:"
+                - list [ref=e82]:
+                  - listitem [ref=e83]:
+                    - strong [ref=e84]: Title
+                    - text: "- metric label"
+                  - listitem [ref=e85]:
+                    - strong [ref=e86]: Value
+                    - text: "- main metric display"
+                  - listitem [ref=e87]:
+                    - strong [ref=e88]: Trend indicator
+                    - text: "- shows percentage change with up/down arrow (green for positive, red for negative)"
+                - paragraph [ref=e89]: The App.jsx includes 4 example cards in a responsive grid layout.
+        - generic [ref=e20]:
+          - textbox "Describe the React component you want to create..." [ref=e21]
+          - button [disabled] [ref=e22]:
+            - img [ref=e23]
+    - separator [ref=e26]
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - tablist [ref=e31]:
+          - tab "Preview" [ref=e32]
+          - tab "Code" [active] [selected] [ref=e33]
+        - generic [ref=e34]:
+          - button "Sign In" [ref=e35]
+          - button "Sign Up" [ref=e36]
+      - generic [ref=e91]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99] [cursor=pointer]:
+              - img [ref=e100]
+              - img [ref=e102]
+              - generic [ref=e104]: components
+            - generic [ref=e107] [cursor=pointer]:
+              - img [ref=e108]
+              - generic [ref=e113]: DashboardCard.jsx
+          - generic [ref=e115] [cursor=pointer]:
+            - img [ref=e116]
+            - generic [ref=e121]: App.jsx
+        - separator [ref=e122]
+        - code [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - generic [ref=e133]: "1"
+              - generic [ref=e137]: "2"
+              - generic [ref=e138]:
+                - generic [ref=e139] [cursor=pointer]: 
+                - generic [ref=e140]: "3"
+              - generic [ref=e141]:
+                - generic [ref=e142] [cursor=pointer]: 
+                - generic [ref=e143]: "4"
+              - generic [ref=e144]:
+                - generic [ref=e145] [cursor=pointer]: 
+                - generic [ref=e146]: "5"
+              - generic [ref=e148]: "6"
+              - generic [ref=e151]: "7"
+              - generic [ref=e152]:
+                - generic [ref=e153] [cursor=pointer]: 
+                - generic [ref=e154]: "8"
+              - generic [ref=e156]:
+                - generic [ref=e157] [cursor=pointer]: 
+                - generic [ref=e158]: "9"
+              - generic [ref=e160]: "10"
+              - generic [ref=e162]: "11"
+              - generic [ref=e164]: "12"
+              - generic [ref=e166]: "13"
+              - generic [ref=e167]:
+                - generic [ref=e168] [cursor=pointer]: 
+                - generic [ref=e169]: "14"
+              - generic [ref=e171]: "15"
+              - generic [ref=e173]: "16"
+              - generic [ref=e175]: "17"
+              - generic [ref=e177]: "18"
+              - generic [ref=e178]:
+                - generic [ref=e179] [cursor=pointer]: 
+                - generic [ref=e180]: "19"
+              - generic [ref=e182]: "20"
+              - generic [ref=e184]: "21"
+              - generic [ref=e186]: "22"
+              - generic [ref=e188]: "23"
+              - generic [ref=e189]:
+                - generic [ref=e190] [cursor=pointer]: 
+                - generic [ref=e191]: "24"
+              - generic [ref=e193]: "25"
+              - generic [ref=e195]: "26"
+              - generic [ref=e197]: "27"
+              - generic [ref=e199]: "28"
+              - generic [ref=e201]: "29"
+              - generic [ref=e203]: "30"
+              - generic [ref=e205]: "31"
+              - generic [ref=e207]: "32"
+              - generic [ref=e209]: "33"
+            - generic [ref=e365]:
+              - generic [ref=e367]: import DashboardCard from '@/components/
+              - generic [ref=e369]: DashboardCard';
+              - generic [ref=e372]: "export default function App() {"
+              - generic [ref=e374]: return (
+              - generic [ref=e376]: <div className="min-h-screen bg-gray-100 p-8">
+              - generic [ref=e378]: <h1 className="text-3xl font-bold text-gray-900
+              - generic [ref=e380]: mb-8">Dashboard</h1>
+              - generic [ref=e384]: <div className="grid grid-cols-1 md:grid-cols-2
+              - generic [ref=e386]: lg:grid-cols-4 gap-6">
+              - generic [ref=e388]: <DashboardCard
+              - generic [ref=e390]: title="Revenue"
+              - generic [ref=e392]: value="$45,231"
+              - generic [ref=e394]: "trend={12}"
+              - generic [ref=e396]: />
+              - generic [ref=e398]: <DashboardCard
+              - generic [ref=e400]: title="Users"
+              - generic [ref=e402]: value="8,234"
+              - generic [ref=e404]: "trend={-3}"
+              - generic [ref=e406]: />
+              - generic [ref=e408]: <DashboardCard
+              - generic [ref=e410]: title="Conversions"
+              - generic [ref=e412]: value="3.2%"
+              - generic [ref=e414]: "trend={8}"
+              - generic [ref=e416]: />
+              - generic [ref=e418]: <DashboardCard
+              - generic [ref=e420]: title="Bounce Rate"
+              - generic [ref=e422]: value="42.1%"
+              - generic [ref=e424]: "trend={-5}"
+              - generic [ref=e426]: />
+              - generic [ref=e428]: </div>
+              - generic [ref=e430]: </div>
+              - generic [ref=e432]: );
+              - generic [ref=e434]: "}"
+            - textbox "Editor content" [ref=e437]
+  - alert [ref=e47]
+  - generic [ref=e438]:
+    - alert
+    - alert
